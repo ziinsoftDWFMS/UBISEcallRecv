@@ -35,15 +35,30 @@
         
         NSDictionary *launchDictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey ];
         NSDictionary *apsDictionary = [launchDictionary valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+        //NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
         
         NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
         
         [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
+        
+        NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
+        NSString *emcId            = [launchDictionary valueForKey:@"EMC_ID"];
+        NSString *emcMsg           = [launchDictionary valueForKey:@"EMC_MSG"];
+        NSString *code              = [launchDictionary valueForKey:@"CODE"];
+        NSLog(@"GRP_CD: %@",    grpCd);
+        NSLog(@"EMC_ID: %@",    emcId);
+        NSLog(@"EMC_MSG: %@",   emcMsg);
+        NSLog(@"CODE: %@",      code);
+        
+        GRP_CD  = grpCd;
+        EMC_ID  = emcId;
+        EMC_MSG = emcMsg;
+        CODE    = code;
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                  message:message delegate:self
+                                                  message:emcMsg delegate:self
                                                   cancelButtonTitle:@"확인"
                                                   otherButtonTitles:@"전화걸기", nil];
         [alert show];
@@ -90,16 +105,22 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
     application.applicationIconBadgeNumber = 0;
-    NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-    NSString *GRP_CD            = [userInfo valueForKey:@"GRP_CD"];
-    NSString *EMC_ID            = [userInfo valueForKey:@"EMC_ID"];
-    NSString *EMC_MSG           = [userInfo valueForKey:@"EMC_MSG"];
-    NSString *CODE              = [userInfo valueForKey:@"CODE"];
-    NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-    NSLog(@"GRP_CD: %@",    GRP_CD);
-    NSLog(@"EMC_ID: %@",    EMC_ID);
-    NSLog(@"EMC_MSG: %@",   EMC_MSG);
-    NSLog(@"CODE: %@",      CODE);
+    //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
+    NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
+    NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
+    NSString *emcMsg           = [userInfo valueForKey:@"EMC_MSG"];
+    NSString *code              = [userInfo valueForKey:@"CODE"];
+    //NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+    NSLog(@"GRP_CD: %@",    grpCd);
+    NSLog(@"EMC_ID: %@",    emcId);
+    NSLog(@"EMC_MSG: %@",   emcMsg);
+    NSLog(@"CODE: %@",      code);
+    
+    GRP_CD  = grpCd;
+    EMC_ID  = emcId;
+    EMC_MSG = emcMsg;
+    CODE    = code;
+    
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                           message:EMC_MSG delegate:self
@@ -265,6 +286,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     NSLog(@"Clicked");
     // OK 버튼을 눌렀을 때 버튼Index가 1로 들어감
+    UIDevice *device = [UIDevice currentDevice];
+    NSString* idForVendor = [device.identifierForVendor UUIDString];
+    
     if (buttonIndex == 1) {
         NSLog(@"Clicked YES");
         //NSString *string = [NSString stringWithFormat:@"tel://%@",@"01032198418"];
@@ -272,9 +296,12 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         CAllServer* res = [CAllServer alloc];
         NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:@""            forKey:@"emc_id"];
-        [param setObject:@"EV01"        forKey:@"code"];
-        [param setValue:@""             forKey:@"hp"];
+        
+        
+        
+        [param setObject:EMC_ID            forKey:@"emc_id"];
+        [param setObject:CODE        forKey:@"code"];
+        [param setValue:idForVendor             forKey:@"deviceId"];
         [param setValue:@"C"            forKey:@"status"];
         
         //param.put("emc_id", emcid);
@@ -319,7 +346,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         CAllServer* res2 = [CAllServer alloc];
         NSMutableDictionary* param2 = [[NSMutableDictionary alloc] init];
-        [param2 setObject:@""            forKey:@"emc_id"];
+        [param2 setObject:EMC_ID            forKey:@"emc_id"];
        
         //param.put("emc_id", emcid);
       
@@ -332,7 +359,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         NSDictionary *jsonInfo2 = [NSJSONSerialization JSONObjectWithData:jsonData2 options:kNilOptions error:&error2];
         NSArray* keys2 = jsonInfo2.allKeys;
         
-        NSLog(@"keys cont %d",keys2.count);
+        //NSLog(@"keys cont %d",keys2.count);
         
         for (int i=0; i<keys2.count; i++) {
             
@@ -350,7 +377,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
             
             if([@"HP" isEqual:[keys2 objectAtIndex:i]])
             {
-                NSString *string = [NSString stringWithFormat:@"tel://%@",[keys2 objectAtIndex:i]];
+                NSString *oriphone = [jsonInfo2 objectForKey:[keys2 objectAtIndex:i]];
+                NSString *replaceString = [oriphone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+                NSLog(@"hp::%@", replaceString);
+                
+                NSString *string = [NSString stringWithFormat:@"tel://%@",replaceString];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
             }
             
@@ -366,11 +397,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         CAllServer* res = [CAllServer alloc];
         NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:@""            forKey:@"emc_id"];
-        [param setObject:@"EV01"        forKey:@"code"];
-        [param setValue:@""             forKey:@"hp"];
-        [param setValue:@"C"            forKey:@"status"];
-        
+        [param setObject:EMC_ID         forKey:@"emc_id"];
+        [param setObject:CODE           forKey:@"code"];
+        [param setValue:@"S"            forKey:@"status"];
+        [param setValue:idForVendor     forKey:@"deviceId"];
         //param.put("emc_id", emcid);
         //param.put("code", code);
         //param.put("hp", mobileNo);

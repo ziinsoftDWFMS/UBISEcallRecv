@@ -53,9 +53,9 @@
     
     NSLog(@"keys cont %d",keys.count);
     
-    NSLog(@" ,login?? %@",str);
+     NSLog(@" ,login?? %@",str);
     
-    if(keys.count == 0){
+    if([str  isEqual: @"{}"]){
         // [tempViewCon.view setBackgroundColor:[UIColor whiteColor]];
         // [[self navigationController] pushViewController:tempViewCon animated: YES];
         
@@ -76,16 +76,13 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
         
-        [self presentViewController:authViewController animated:NO completion:nil];
-        /*
         authViewController.view.alpha = 0;
         [UIView animateWithDuration:0.5 animations:^{
             authViewController.view.alpha = 1;
         } completion:^(BOOL finished) {
-            //[self presentModalViewController:authViewController animated:NO];
-            [self presentViewController:authViewController animated:NO completion:nil];
+            [self presentModalViewController:authViewController animated:NO];
         }];
-        */
+        
         
     }else{
         

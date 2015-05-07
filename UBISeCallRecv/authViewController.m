@@ -42,7 +42,7 @@
     [param setObject:phone forKey:@"hp"];
     [param setObject:idForVendor forKey:@"deviceId"];
     [param setValue:@"R" forKey:@"gubun"];
-    [param setValue:@"" forKey:@"code"];
+    [param setValue:@"EV01" forKey:@"code"];
     [param setValue:app.DEVICE_TOK forKey:@"gcm_id"];
     NSString* str = [res stringWithUrl:@"regEmcAppInstInfo.do" VAL:param];
     

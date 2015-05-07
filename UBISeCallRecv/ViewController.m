@@ -46,26 +46,18 @@
     //regEmcAppInstInfo.do
     
     //
+    NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    NSArray* keys = jsonInfo.allKeys;
     
-    
+    NSLog(@"keys cont %d",keys.count);
     
     NSLog(@" ,login?? %@",str);
     
-    
-    
-    
-    
-    if([str  isEqual: @"{}"]){
-        
-        
-        
+    if(keys.count == 0){
         // [tempViewCon.view setBackgroundColor:[UIColor whiteColor]];
-        
-        
-        
         // [[self navigationController] pushViewController:tempViewCon animated: YES];
-        
-        
         
         NSLog(@">>31231>>>1234%@",idForVendor);
         
@@ -84,13 +76,16 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
         
+        [self presentViewController:authViewController animated:NO completion:nil];
+        /*
         authViewController.view.alpha = 0;
         [UIView animateWithDuration:0.5 animations:^{
             authViewController.view.alpha = 1;
         } completion:^(BOOL finished) {
-            [self presentModalViewController:authViewController animated:NO];
+            //[self presentModalViewController:authViewController animated:NO];
+            [self presentViewController:authViewController animated:NO completion:nil];
         }];
-        
+        */
         
     }else{
         

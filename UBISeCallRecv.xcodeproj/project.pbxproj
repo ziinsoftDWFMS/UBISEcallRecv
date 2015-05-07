@@ -14,6 +14,17 @@
 		57911A7E1AF5E55800C66647 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57911A7D1AF5E55800C66647 /* Images.xcassets */; };
 		57911A811AF5E55800C66647 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57911A7F1AF5E55800C66647 /* LaunchScreen.xib */; };
 		57911A8D1AF5E55800C66647 /* UBISeCallRecvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57911A8C1AF5E55800C66647 /* UBISeCallRecvTests.m */; };
+		BAFA2F3B1AFB38FB007BEFB3 /* authViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA2F3A1AFB38FB007BEFB3 /* authViewController.m */; };
+		BAFA2F3E1AFB3917007BEFB3 /* CAllServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA2F3D1AFB3917007BEFB3 /* CAllServer.m */; };
+		BAFA2F401AFB397F007BEFB3 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA2F3F1AFB397F007BEFB3 /* DwfmsSegue.m */; };
+		BAFA2F4B1AFB49E8007BEFB3 /* ic_backout3.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F431AFB49E8007BEFB3 /* ic_backout3.png */; };
+		BAFA2F4C1AFB49E8007BEFB3 /* ic_elev.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F441AFB49E8007BEFB3 /* ic_elev.png */; };
+		BAFA2F4D1AFB49E8007BEFB3 /* ic_emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */; };
+		BAFA2F4E1AFB49E8007BEFB3 /* ic_fire3.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */; };
+		BAFA2F4F1AFB49E8007BEFB3 /* ic_gas3.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */; };
+		BAFA2F501AFB49E8007BEFB3 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */; };
+		BAFA2F511AFB49E8007BEFB3 /* ic_safely_accid.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */; };
+		BAFA2F521AFB49E8007BEFB3 /* ic_water.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +51,20 @@
 		57911A861AF5E55800C66647 /* UBISeCallRecvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBISeCallRecvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57911A8B1AF5E55800C66647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57911A8C1AF5E55800C66647 /* UBISeCallRecvTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UBISeCallRecvTests.m; sourceTree = "<group>"; };
+		BAFA2F391AFB38E7007BEFB3 /* authViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authViewController.h; sourceTree = "<group>"; };
+		BAFA2F3A1AFB38FB007BEFB3 /* authViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authViewController.m; sourceTree = "<group>"; };
+		BAFA2F3C1AFB390F007BEFB3 /* CAllServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAllServer.h; sourceTree = "<group>"; };
+		BAFA2F3D1AFB3917007BEFB3 /* CAllServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAllServer.m; sourceTree = "<group>"; };
+		BAFA2F3F1AFB397F007BEFB3 /* DwfmsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DwfmsSegue.m; sourceTree = "<group>"; };
+		BAFA2F411AFB398A007BEFB3 /* DwfmsSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DwfmsSegue.h; sourceTree = "<group>"; };
+		BAFA2F431AFB49E8007BEFB3 /* ic_backout3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_backout3.png; sourceTree = "<group>"; };
+		BAFA2F441AFB49E8007BEFB3 /* ic_elev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_elev.png; sourceTree = "<group>"; };
+		BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emergency.png; sourceTree = "<group>"; };
+		BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_fire3.png; sourceTree = "<group>"; };
+		BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_gas3.png; sourceTree = "<group>"; };
+		BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_safely_accid.png; sourceTree = "<group>"; };
+		BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_water.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +93,7 @@
 				57911A6E1AF5E55800C66647 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		57911A6E1AF5E55800C66647 /* Products */ = {
 			isa = PBXGroup;
@@ -81,6 +107,13 @@
 		57911A6F1AF5E55800C66647 /* UBISeCallRecv */ = {
 			isa = PBXGroup;
 			children = (
+				BAFA2F421AFB49AD007BEFB3 /* images */,
+				BAFA2F411AFB398A007BEFB3 /* DwfmsSegue.h */,
+				BAFA2F3F1AFB397F007BEFB3 /* DwfmsSegue.m */,
+				BAFA2F3D1AFB3917007BEFB3 /* CAllServer.m */,
+				BAFA2F3C1AFB390F007BEFB3 /* CAllServer.h */,
+				BAFA2F3A1AFB38FB007BEFB3 /* authViewController.m */,
+				BAFA2F391AFB38E7007BEFB3 /* authViewController.h */,
 				57911A741AF5E55800C66647 /* AppDelegate.h */,
 				57911A751AF5E55800C66647 /* AppDelegate.m */,
 				57911A771AF5E55800C66647 /* ViewController.h */,
@@ -117,6 +150,21 @@
 				57911A8B1AF5E55800C66647 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAFA2F421AFB49AD007BEFB3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				BAFA2F431AFB49E8007BEFB3 /* ic_backout3.png */,
+				BAFA2F441AFB49E8007BEFB3 /* ic_elev.png */,
+				BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */,
+				BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */,
+				BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */,
+				BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */,
+				BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */,
+				BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +247,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFA2F511AFB49E8007BEFB3 /* ic_safely_accid.png in Resources */,
 				57911A7C1AF5E55800C66647 /* Main.storyboard in Resources */,
+				BAFA2F501AFB49E8007BEFB3 /* ic_launcher.png in Resources */,
+				BAFA2F4C1AFB49E8007BEFB3 /* ic_elev.png in Resources */,
+				BAFA2F4B1AFB49E8007BEFB3 /* ic_backout3.png in Resources */,
 				57911A811AF5E55800C66647 /* LaunchScreen.xib in Resources */,
 				57911A7E1AF5E55800C66647 /* Images.xcassets in Resources */,
+				BAFA2F521AFB49E8007BEFB3 /* ic_water.png in Resources */,
+				BAFA2F4E1AFB49E8007BEFB3 /* ic_fire3.png in Resources */,
+				BAFA2F4D1AFB49E8007BEFB3 /* ic_emergency.png in Resources */,
+				BAFA2F4F1AFB49E8007BEFB3 /* ic_gas3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57911A791AF5E55800C66647 /* ViewController.m in Sources */,
+				BAFA2F401AFB397F007BEFB3 /* DwfmsSegue.m in Sources */,
 				57911A761AF5E55800C66647 /* AppDelegate.m in Sources */,
 				57911A731AF5E55800C66647 /* main.m in Sources */,
+				BAFA2F3B1AFB38FB007BEFB3 /* authViewController.m in Sources */,
+				BAFA2F3E1AFB3917007BEFB3 /* CAllServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +405,8 @@
 		57911A911AF5E55800C66647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UBISeCallRecv/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,8 +415,8 @@
 		57911A921AF5E55800C66647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UBISeCallRecv/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +475,7 @@
 				57911A921AF5E55800C66647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57911A931AF5E55800C66647 /* Build configuration list for PBXNativeTarget "UBISeCallRecvTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +484,7 @@
 				57911A951AF5E55800C66647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

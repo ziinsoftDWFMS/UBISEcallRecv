@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    NSString *DEVICE_TOK;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property (strong, nonatomic) NSString *DEVICE_TOK;
 @end
 

@@ -8,6 +8,7 @@
 
 #import "authViewController.h"
 #import "CAllServer.h"
+#import "AppDelegate.h"
 @interface authViewController ()
 
 @end
@@ -25,6 +26,11 @@
 }
 - (IBAction)sendEvent:(id)sender {
     
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"device Token is<<<>>>%@", app.DEVICE_TOK);
+    
+    
     NSString *phone = self.phoneText.text;
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
@@ -37,7 +43,7 @@
     [param setObject:idForVendor forKey:@"deviceId"];
     [param setValue:@"R" forKey:@"gubun"];
     [param setValue:@"" forKey:@"code"];
-    [param setValue:@"abcdefxxxzz" forKey:@"gcm_id"];
+    [param setValue:app.DEVICE_TOK forKey:@"gcm_id"];
     NSString* str = [res stringWithUrl:@"regEmcAppInstInfo.do" VAL:param];
     
     NSLog(@" %@",str);

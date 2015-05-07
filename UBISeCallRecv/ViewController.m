@@ -10,6 +10,7 @@
 #import "CAllServer.h"
 #import "authViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
@@ -93,39 +95,11 @@
     }else{
         
         
-        
-        
-        
         NSLog(@">>4566>>>1234%@",idForVendor);
         
     }
     
     
-    UILocalNotification *noti = [[UILocalNotification alloc]init];
-    
-    // 알람 발생 시각 설정. 5초후로 설정. NSDate 타입.
-    noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    
-    // timeZone 설정.
-    noti.timeZone = [NSTimeZone systemTimeZone];
-    
-    // 알림 메시지 설정
-    noti.alertBody = @"[엘리베이터]\n 재난이 발생했습니다.";
-    
-    // 알림 액션 설정
-    noti.alertAction = @"전화걸기";
-    
-    // 아이콘 뱃지 넘버 설정. 임의로 1 입력
-    noti.applicationIconBadgeNumber = 1;
-    
-    // 알림 사운드 설정. 자체 제작 사운드도 가능. (if nil = no sound)
-    noti.soundName = UILocalNotificationDefaultSoundName;
-    
-    // 임의의 사용자 정보 설정. 알림 화면엔 나타나지 않음
-    noti.userInfo = [NSDictionary dictionaryWithObject:@"01026533972" forKey:@"tel"];
-    
-    // UIApplication을 이용하여 알림을 등록.
-    [[UIApplication sharedApplication] scheduleLocalNotification:noti];
     
 }
 
@@ -133,5 +107,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 @end

@@ -11,6 +11,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSString *DEVICE_TOK;
+   
 }
 
 @property (strong, nonatomic) UIWindow *window;

@@ -44,7 +44,7 @@
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                   message:message delegate:self
-                                                  cancelButtonTitle:@"취소"
+                                                  cancelButtonTitle:@"확인"
                                                   otherButtonTitles:@"전화걸기", nil];
         [alert show];
         
@@ -91,11 +91,19 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     
     application.applicationIconBadgeNumber = 0;
     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-    NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-    NSLog(@"message: %@", message);
+    NSString *GRP_CD            = [userInfo valueForKey:@"GRP_CD"];
+    NSString *EMC_ID            = [userInfo valueForKey:@"EMC_ID"];
+    NSString *EMC_MSG           = [userInfo valueForKey:@"EMC_MSG"];
+    NSString *CODE              = [userInfo valueForKey:@"CODE"];
+    NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+    NSLog(@"GRP_CD: %@",    GRP_CD);
+    NSLog(@"EMC_ID: %@",    EMC_ID);
+    NSLog(@"EMC_MSG: %@",   EMC_MSG);
+    NSLog(@"CODE: %@",      CODE);
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:message delegate:self
-                                          cancelButtonTitle:@"취소"
+                                          message:EMC_MSG delegate:self
+                                          cancelButtonTitle:@"확인"
                                           otherButtonTitles:@"전화걸기", nil];
     [alert show];
 
@@ -259,13 +267,121 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     // OK 버튼을 눌렀을 때 버튼Index가 1로 들어감
     if (buttonIndex == 1) {
         NSLog(@"Clicked YES");
-        NSString *string = [NSString stringWithFormat:@"tel://%@",@"01032198418"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+        //NSString *string = [NSString stringWithFormat:@"tel://%@",@"01032198418"];
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
         
+        CAllServer* res = [CAllServer alloc];
+        NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
+        [param setObject:@""            forKey:@"emc_id"];
+        [param setObject:@"EV01"        forKey:@"code"];
+        [param setValue:@""             forKey:@"hp"];
+        [param setValue:@"C"            forKey:@"status"];
+        
+        //param.put("emc_id", emcid);
+        //param.put("code", code);
+        //param.put("hp", mobileNo);
+        //param.put("status", "C");
+        
+        NSString* str = [res stringWithUrl:@"emcConfirm.do" VAL:param];
+        
+        NSLog(@" %@",str);
+        /*
+        NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error;
+        NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+        NSArray* keys = jsonInfo.allKeys;
+        
+        NSLog(@"keys cont %d",keys.count);
+        
+        for (int i=0; i<keys.count; i++) {
+            
+            
+            if([@"RESULT" isEqual:[keys objectAtIndex:i]])
+            {
+                if([@"SUCCESS" isEqual:[jsonInfo objectForKey:[keys objectAtIndex:i]]])
+                {
+                    NSLog(@"key %@  value %@",[keys objectAtIndex:i],[jsonInfo objectForKey:[keys objectAtIndex:i]] );
+                    
+                    
+                }
+            }
+           
+            
+            
+            if([@"ERR_MSG" isEqual:[keys objectAtIndex:i]])
+            {
+                
+            }
+        }
+        
+        */
+        
+        
+        CAllServer* res2 = [CAllServer alloc];
+        NSMutableDictionary* param2 = [[NSMutableDictionary alloc] init];
+        [param2 setObject:@""            forKey:@"emc_id"];
+       
+        //param.put("emc_id", emcid);
+      
+        NSString* str2 = [res2 stringWithUrl:@"emcSenderInfo.do" VAL:param2];
+        
+        NSLog(@" %@",str2);
+        
+        NSData *jsonData2 = [str2 dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error2;
+        NSDictionary *jsonInfo2 = [NSJSONSerialization JSONObjectWithData:jsonData2 options:kNilOptions error:&error2];
+        NSArray* keys2 = jsonInfo2.allKeys;
+        
+        NSLog(@"keys cont %d",keys2.count);
+        
+        for (int i=0; i<keys2.count; i++) {
+            
+            
+            if([@"RESULT" isEqual:[keys2 objectAtIndex:i]])
+            {
+                if([@"SUCCESS" isEqual:[jsonInfo2 objectForKey:[keys2 objectAtIndex:i]]])
+                {
+                    NSLog(@"key %@  value %@",[keys2 objectAtIndex:i],[jsonInfo2 objectForKey:[keys2 objectAtIndex:i]] );
+                    
+                    
+                    
+                }
+            }
+            
+            if([@"HP" isEqual:[keys2 objectAtIndex:i]])
+            {
+                NSString *string = [NSString stringWithFormat:@"tel://%@",[keys2 objectAtIndex:i]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+            }
+            
+            if([@"ERR_MSG" isEqual:[keys2 objectAtIndex:i]])
+            {
+                
+            }
+        }
         
     }
     else {
         NSLog(@"Clicked NO");
+        
+        CAllServer* res = [CAllServer alloc];
+        NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
+        [param setObject:@""            forKey:@"emc_id"];
+        [param setObject:@"EV01"        forKey:@"code"];
+        [param setValue:@""             forKey:@"hp"];
+        [param setValue:@"C"            forKey:@"status"];
+        
+        //param.put("emc_id", emcid);
+        //param.put("code", code);
+        //param.put("hp", mobileNo);
+        //param.put("status", "C");
+        
+        NSString* str = [res stringWithUrl:@"emcConfirm.do" VAL:param];
+        
+        NSLog(@" %@",str);
+        
+        
+        
     }
     
     

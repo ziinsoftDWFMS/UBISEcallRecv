@@ -22,7 +22,7 @@
 		BAFA2F4D1AFB49E8007BEFB3 /* ic_emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */; };
 		BAFA2F4E1AFB49E8007BEFB3 /* ic_fire3.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */; };
 		BAFA2F4F1AFB49E8007BEFB3 /* ic_gas3.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */; };
-		BAFA2F501AFB49E8007BEFB3 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */; };
+		BAFA2F501AFB49E8007BEFB3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F481AFB49E8007BEFB3 /* Icon.png */; };
 		BAFA2F511AFB49E8007BEFB3 /* ic_safely_accid.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */; };
 		BAFA2F521AFB49E8007BEFB3 /* ic_water.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emergency.png; sourceTree = "<group>"; };
 		BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_fire3.png; sourceTree = "<group>"; };
 		BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_gas3.png; sourceTree = "<group>"; };
-		BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		BAFA2F481AFB49E8007BEFB3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_safely_accid.png; sourceTree = "<group>"; };
 		BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_water.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +160,7 @@
 				BAFA2F451AFB49E8007BEFB3 /* ic_emergency.png */,
 				BAFA2F461AFB49E8007BEFB3 /* ic_fire3.png */,
 				BAFA2F471AFB49E8007BEFB3 /* ic_gas3.png */,
-				BAFA2F481AFB49E8007BEFB3 /* ic_launcher.png */,
+				BAFA2F481AFB49E8007BEFB3 /* Icon.png */,
 				BAFA2F491AFB49E8007BEFB3 /* ic_safely_accid.png */,
 				BAFA2F4A1AFB49E8007BEFB3 /* ic_water.png */,
 			);
@@ -250,7 +250,7 @@
 			files = (
 				BAFA2F511AFB49E8007BEFB3 /* ic_safely_accid.png in Resources */,
 				57911A7C1AF5E55800C66647 /* Main.storyboard in Resources */,
-				BAFA2F501AFB49E8007BEFB3 /* ic_launcher.png in Resources */,
+				BAFA2F501AFB49E8007BEFB3 /* Icon.png in Resources */,
 				BAFA2F4C1AFB49E8007BEFB3 /* ic_elev.png in Resources */,
 				BAFA2F4B1AFB49E8007BEFB3 /* ic_backout3.png in Resources */,
 				57911A811AF5E55800C66647 /* LaunchScreen.xib in Resources */,
@@ -406,8 +406,8 @@
 		57911A911AF5E55800C66647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JongHoon Park (X62TJA842Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JongHoon Park (X62TJA842Z)";
 				INFOPLIST_FILE = UBISeCallRecv/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -419,8 +419,8 @@
 		57911A921AF5E55800C66647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JongHoon Park (X62TJA842Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JongHoon Park (X62TJA842Z)";
 				INFOPLIST_FILE = UBISeCallRecv/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

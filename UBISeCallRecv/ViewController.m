@@ -34,7 +34,6 @@
     //[param setValue:@"" forKey:@"hp"];
     [param setValue:@"RV01" forKey:@"code"];
     [param setValue:@"S" forKey:@"gubun"];
-    
     [param setObject:idForVendor forKey:@"deviceId"];
     
     //deviceId

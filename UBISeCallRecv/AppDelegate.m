@@ -305,10 +305,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         
         
-        [param setObject:EMC_ID            forKey:@"emc_id"];
-        [param setObject:CODE        forKey:@"code"];
-        [param setValue:idForVendor             forKey:@"deviceId"];
-        [param setValue:@"C"            forKey:@"status"];
+        [param setObject:EMC_ID             forKey:@"emc_id"];
+        [param setObject:CODE            forKey:@"code"];
+        [param setValue:idForVendor         forKey:@"deviceId"];
+        [param setValue:@"C"                forKey:@"status"];
         
         //param.put("emc_id", emcid);
         //param.put("code", code);
@@ -403,10 +403,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         CAllServer* res = [CAllServer alloc];
         NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:EMC_ID         forKey:@"emc_id"];
-        [param setObject:CODE           forKey:@"code"];
-        [param setValue:@"S"            forKey:@"status"];
-        [param setValue:idForVendor     forKey:@"deviceId"];
+        [param setObject:EMC_ID             forKey:@"emc_id"];
+        [param setObject:CODE            forKey:@"code"];
+        [param setValue:@"S"                forKey:@"status"];
+        [param setValue:idForVendor         forKey:@"deviceId"];
         //param.put("emc_id", emcid);
         //param.put("code", code);
         //param.put("hp", mobileNo);

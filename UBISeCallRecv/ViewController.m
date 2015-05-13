@@ -33,7 +33,7 @@
     
     //[param setValue:@"" forKey:@"hp"];
     [param setValue:@"RV01" forKey:@"code"];
-    [param setValue:@"S" forKey:@"gubun"];
+    [param setValue:@"R" forKey:@"gubun"];
     
     [param setObject:idForVendor forKey:@"deviceId"];
     
@@ -60,7 +60,8 @@
         // [[self navigationController] pushViewController:tempViewCon animated: YES];
         
         NSLog(@">>31231>>>1234%@",idForVendor);
-        
+        NSLog(@">>>>>>>>>>>>>>>>> viewLoad not auth before call auth UI");
+
         
         
         // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"  bundle:[NSBundle mainBundle]];
@@ -85,7 +86,7 @@
         
         
     }else{
-        
+        NSLog(@">>>>>>>>>>>>>>>>> viewLoad auth OK");
         
         NSLog(@">>4566>>>1234%@",idForVendor);
         

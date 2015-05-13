@@ -99,7 +99,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction)cancelEvent:(id)sender {
+    
+    exit(0);
+    /*
+     [UIView animateWithDuration:0.0 animations:^{
+     self.view.alpha = 0;
+     } completion:^(BOOL b){
+     [self.presentingViewController dismissModalViewControllerAnimated:NO];
+     self.view.alpha = 1;
+     }];*/
+    
+}
 
 
 @end

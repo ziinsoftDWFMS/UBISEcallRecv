@@ -17,13 +17,16 @@
 
 @implementation ViewController
 
+BOOL navigateYN;
+NSString* idForVendor;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     
     UIDevice *device = [UIDevice currentDevice];
-    NSString* idForVendor = [device.identifierForVendor UUIDString];
+    idForVendor = [device.identifierForVendor UUIDString];
     
     NSLog(@">>>>>%@",idForVendor);
     //서버에서 결과 리턴받기
@@ -53,66 +56,51 @@
     
     NSLog(@"keys cont %d",keys.count);
     
-     NSLog(@" ,login?? %@",str);
+    NSLog(@" ,login?? %@",str);
+    
     
     if([str  isEqual: @"{}"]){
-        // [tempViewCon.view setBackgroundColor:[UIColor whiteColor]];
-        // [[self navigationController] pushViewController:tempViewCon animated: YES];
         
-        NSLog(@">>31231>>>1234%@",idForVendor);
-        NSLog(@">>>>>>>>>>>>>>>>> viewLoad not auth before call auth UI");
-
+        NSLog(@">>>>>%@",idForVendor);
         
-        
-        // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"  bundle:[NSBundle mainBundle]];
-        
-        
-        
-        //IdentViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
-        
-        // [self presentModalViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"IdentView"] animated:YES];
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
-        
-        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        
-        authViewController.view.alpha = 0;
-        [UIView animateWithDuration:0.5 animations:^{
-            authViewController.view.alpha = 1;
-        } completion:^(BOOL finished) {
-            [self presentModalViewController:authViewController animated:NO];
-        }];
-        
+        navigateYN = YES;
         
     }else{
-        NSLog(@">>>>>>>>>>>>>>>>> viewLoad auth OK");
-        
-        NSLog(@">>4566>>>1234%@",idForVendor);
+        navigateYN = NO;
         
     }
     
-    
-    
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cancelEvent:(id)sender {
-    
-    exit(0);
-    /*
-     [UIView animateWithDuration:0.0 animations:^{
-     self.view.alpha = 0;
-     } completion:^(BOOL b){
-     [self.presentingViewController dismissModalViewControllerAnimated:NO];
-     self.view.alpha = 1;
-     }];*/
-    
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"@@@@@@@@@@@@@@  call viewDidAppear");
+    if (navigateYN) {
+        navigateYN = NO;
+        [self performSegueWithIdentifier:@"authviewTrans" sender:self];
+    } else {
+        NSLog(@">>4566>>>1234%@",idForVendor);
+    }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"@@@@@@@@@@@@@@  call viewWillAppear");
+}
+
+
+- (IBAction)closeEvent:(id)cancel {
+    
+    exit(0);
+}
 
 @end

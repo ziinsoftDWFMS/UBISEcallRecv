@@ -24,6 +24,15 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qof-hf-q9I">
+                                <rect key="frame" x="285" y="206" width="30" height="30"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1Ef-k6-giE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -31,6 +40,7 @@
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="154" id="92W-kB-fP9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="153" id="ATe-fK-Gr0"/>
                             <constraint firstAttribute="centerX" secondItem="PrD-B2-zAK" secondAttribute="centerX" constant="112.5" id="JgY-ON-9QH"/>
+                            <constraint firstAttribute="centerX" secondItem="Qof-hf-q9I" secondAttribute="centerX" id="TsG-41-mgR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="-16" id="fba-7B-OSI"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="go3-Yg-PWj"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="149" id="xJA-SQ-hE4"/>
@@ -46,6 +56,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="Qof-hf-q9I" id="Y8m-As-SEu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,15 +83,6 @@
                                 </state>
                                 <connections>
                                     <action selector="sendEvent:" destination="ttH-Mz-sco" eventType="touchUpInside" id="05O-w0-PWN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeZ-PA-EJS">
-                                <rect key="frame" x="354" y="187" width="30" height="30"/>
-                                <state key="normal" title="취소">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelEvent:" destination="ttH-Mz-sco" eventType="touchUpInside" id="oJb-rB-rGU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJj-oX-aR4">
@@ -114,6 +118,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeZ-PA-EJS">
+                                <rect key="frame" x="354" y="187" width="30" height="30"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelEvent:" destination="ttH-Mz-sco" eventType="touchUpInside" id="oJb-rB-rGU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -146,6 +159,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Iur-bb-u6C"/>
+                                <exclude reference="NbP-xY-yoy"/>
+                                <exclude reference="d60-G3-GIa"/>
                                 <exclude reference="zQ9-8v-EXI"/>
                                 <exclude reference="ryq-CT-Mz8"/>
                                 <exclude reference="toS-Eg-4lN"/>
@@ -153,9 +169,6 @@
                                 <exclude reference="a7u-Em-H9f"/>
                                 <exclude reference="ga8-PL-Xb2"/>
                                 <exclude reference="sSr-7u-2lw"/>
-                                <exclude reference="Iur-bb-u6C"/>
-                                <exclude reference="NbP-xY-yoy"/>
-                                <exclude reference="d60-G3-GIa"/>
                                 <exclude reference="4dO-Wl-vSI"/>
                                 <exclude reference="dON-Sf-hbT"/>
                                 <exclude reference="eVJ-VY-Z5j"/>

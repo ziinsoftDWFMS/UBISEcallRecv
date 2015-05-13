@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
@@ -15,6 +16,7 @@
     NSString *EMC_ID;
     NSString *EMC_MSG;
     NSString *CODE;
+    SystemSoundID ssid;
 }
 
 @property (strong, nonatomic) UIWindow *window;

@@ -103,6 +103,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
+    NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav" inDirectory:@"/"];
+    CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
+    AudioServicesCreateSystemSoundID(sndURL, &ssid);
+    
+    AudioServicesPlaySystemSound(ssid);
+    
     
     application.applicationIconBadgeNumber = 0;
     //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];

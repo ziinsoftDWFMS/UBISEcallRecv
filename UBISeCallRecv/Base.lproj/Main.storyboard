@@ -33,6 +33,9 @@
                                     <action selector="closeButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fwH-6C-Rqc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wi.png" translatesAutoresizingMaskIntoConstraints="NO" id="gY7-wh-1al">
+                                <rect key="frame" x="0.0" y="236" width="600" height="364"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -40,12 +43,15 @@
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="154" id="92W-kB-fP9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="153" id="ATe-fK-Gr0"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="93" id="AWH-Zr-ezz"/>
+                            <constraint firstItem="gY7-wh-1al" firstAttribute="top" secondItem="XN5-UW-NOP" secondAttribute="bottom" constant="14" id="Bns-ba-t50"/>
                             <constraint firstAttribute="centerX" secondItem="PrD-B2-zAK" secondAttribute="centerX" constant="112.5" id="JgY-ON-9QH"/>
                             <constraint firstItem="XN5-UW-NOP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="172" id="T0k-iB-8Mv"/>
                             <constraint firstAttribute="centerX" secondItem="XN5-UW-NOP" secondAttribute="centerX" constant="7.5" id="Xe3-iZ-er5"/>
+                            <constraint firstItem="gY7-wh-1al" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="YY9-7O-FI6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="-16" id="fba-7B-OSI"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="go3-Yg-PWj"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="149" id="xJA-SQ-hE4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gY7-wh-1al" secondAttribute="trailing" constant="-16" id="yjM-Jm-1mI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -226,4 +232,7 @@
             <point key="canvasLocation" x="1244" y="417"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wi.png" width="300" height="225"/>
+    </resources>
 </document>

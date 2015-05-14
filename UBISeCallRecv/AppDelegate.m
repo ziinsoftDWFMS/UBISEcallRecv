@@ -397,7 +397,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         NSLog(@" %@",str);
         
         
-        
+        exit(0);
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];

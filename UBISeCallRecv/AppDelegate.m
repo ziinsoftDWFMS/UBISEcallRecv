@@ -45,8 +45,11 @@
         
         NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
         
-        [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        //[application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+        //[application setApplicationIconBadgeNumber:0];
+        //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        //[[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         
         NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
@@ -141,45 +144,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
                                           otherButtonTitles:@"전화걸기", nil];
     [alert show];
 
-    /*
+    
     if(application.applicationState == UIApplicationStateActive){
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
+        NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
+        CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
+        AudioServicesCreateSystemSoundID(sndURL, &ssid);
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:message delegate:self
-                                              cancelButtonTitle:@"확인"
-                                              otherButtonTitles:@"전화걸기", nil];
+        AudioServicesPlaySystemSound(ssid);
         
-        [alert show];
-        
-    }else if(application.applicationState == UIApplicationStateInactive){
-        
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                              message:message delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"전화걸기", nil];
-        [alert show];
-        //전화걸기
-        
-    }else{
-        
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:message delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"전화걸기", nil];
-        [alert show];
-
-        NSLog(@"message: %@", @"fail state");
-        
-    }*/
+    }
     NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
 
     [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
@@ -426,7 +399,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         
     }
-    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     
 }

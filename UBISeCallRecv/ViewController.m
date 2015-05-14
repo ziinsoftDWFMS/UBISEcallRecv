@@ -98,9 +98,10 @@ NSString* idForVendor;
 }
 
 
-- (IBAction)closeEvent:(id)cancel {
-    
+- (IBAction)closeButton:(UIButton *)sender {
     exit(0);
 }
+
+
 
 @end

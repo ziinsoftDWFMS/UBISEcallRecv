@@ -24,6 +24,15 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-UW-NOP">
+                                <rect key="frame" x="277" y="192" width="31" height="30"/>
+                                <state key="normal" title="닫 기">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fwH-6C-Rqc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -32,6 +41,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="153" id="ATe-fK-Gr0"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="93" id="AWH-Zr-ezz"/>
                             <constraint firstAttribute="centerX" secondItem="PrD-B2-zAK" secondAttribute="centerX" constant="112.5" id="JgY-ON-9QH"/>
+                            <constraint firstItem="XN5-UW-NOP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="172" id="T0k-iB-8Mv"/>
+                            <constraint firstAttribute="centerX" secondItem="XN5-UW-NOP" secondAttribute="centerX" constant="7.5" id="Xe3-iZ-er5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PrD-B2-zAK" secondAttribute="trailing" constant="-16" id="fba-7B-OSI"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="go3-Yg-PWj"/>
                             <constraint firstItem="PrD-B2-zAK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="149" id="xJA-SQ-hE4"/>
@@ -169,16 +180,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Iur-bb-u6C"/>
-                                <exclude reference="Liu-rP-WI0"/>
-                                <exclude reference="NbP-xY-yoy"/>
-                                <exclude reference="W24-DD-sCE"/>
-                                <exclude reference="d60-G3-GIa"/>
-                                <exclude reference="zQ9-8v-EXI"/>
-                                <exclude reference="CR3-CZ-Bu3"/>
-                                <exclude reference="ZPl-9l-yaI"/>
-                                <exclude reference="ryq-CT-Mz8"/>
-                                <exclude reference="toS-Eg-4lN"/>
                                 <exclude reference="0J7-0m-6TO"/>
                                 <exclude reference="6aV-jm-zLD"/>
                                 <exclude reference="Lhq-x1-Oc5"/>
@@ -188,6 +189,16 @@
                                 <exclude reference="ga8-PL-Xb2"/>
                                 <exclude reference="sSr-7u-2lw"/>
                                 <exclude reference="udn-TW-f2M"/>
+                                <exclude reference="zQ9-8v-EXI"/>
+                                <exclude reference="CR3-CZ-Bu3"/>
+                                <exclude reference="ZPl-9l-yaI"/>
+                                <exclude reference="ryq-CT-Mz8"/>
+                                <exclude reference="toS-Eg-4lN"/>
+                                <exclude reference="Iur-bb-u6C"/>
+                                <exclude reference="Liu-rP-WI0"/>
+                                <exclude reference="NbP-xY-yoy"/>
+                                <exclude reference="W24-DD-sCE"/>
+                                <exclude reference="d60-G3-GIa"/>
                                 <exclude reference="4dO-Wl-vSI"/>
                                 <exclude reference="dON-Sf-hbT"/>
                                 <exclude reference="eVJ-VY-Z5j"/>

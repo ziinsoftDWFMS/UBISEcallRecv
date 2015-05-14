@@ -10,6 +10,7 @@
 
 
 @interface ViewController : UIViewController
+- (IBAction)closeButton:(UIButton *)sender;
 
 
 @end

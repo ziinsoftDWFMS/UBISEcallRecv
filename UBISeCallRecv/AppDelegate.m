@@ -89,12 +89,25 @@
          */
         //----------------------------------------------------------------------------------
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                  message:emcMsg delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles:@"전화걸기", nil];
-        [alert show];
+        UITextView *txtView = nil ;
+        //
+        txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 80.0)];
+        [txtView setBackgroundColor:[UIColor clearColor]];
+        [txtView setTextAlignment:NSTextAlignmentLeft] ;
+        [txtView setEditable:NO];
+        [txtView setFont:[UIFont fontWithName:@"Avenir-Black" size:15]];
+        [txtView setText:emcMsg];
         
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
+                                                        message:@"" delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:@"전화걸기", nil];
+        
+        [alert setValue:txtView forKey:@"accessoryView"];
+        //[alert addSubview:txtView];
+        [alert show] ;
+
         
         
        
@@ -164,35 +177,53 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     CODE    = code;
     
     //메세지 왼쪽 정렬을 위한 코드 삽입
-    /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                          message:@"\n\n\n\n\n\n" delegate:self
+    
+    
+    
+    UITextView *txtView = nil ;
+    //
+    txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 80.0)];
+    [txtView setBackgroundColor:[UIColor clearColor]];
+    [txtView setTextAlignment:NSTextAlignmentLeft] ;
+    [txtView setEditable:NO];
+    [txtView setFont:[UIFont fontWithName:@"Avenir-Black" size:15]];
+    [txtView setText:emcMsg];
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
+                                                    message:@"" delegate:self
                                           cancelButtonTitle:@"확인"
                                           otherButtonTitles:@"전화걸기", nil];
     
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 24.0, 250.0, 80.0)];
-    label.numberOfLines = 0;
-    label.textAlignment = NSTextAlignmentLeft;
-    label.backgroundColor = [UIColor clearColor];
+    [alert setValue:txtView forKey:@"accessoryView"];
+    //[alert addSubview:txtView];
+    [alert show] ;
+
+    //./UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 24.0, 250.0, 80.0)];
+    //label.numberOfLines = 0;
+    //label.textAlignment = NSTextAlignmentLeft;
+    //label.backgroundColor = [UIColor clearColor];
     //label.textColor = [UIColor whiteColor];
-    label.text = emcMsg;
-    [alert addSubview:label];
-     */
+    //label.text = emcMsg;
+   // [alert addSubview:label];
+    
+    
+    
+    //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"title" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
     //----------------------------------------------------------------------------------
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:emcMsg delegate:self
-                                          cancelButtonTitle:@"확인"
-                                          otherButtonTitles:@"전화걸기", nil];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+    //                                                message:emcMsg delegate:self
+    //                                      cancelButtonTitle:@"확인"
+    //                                      otherButtonTitles:@"전화걸기", nil];
     
-    [alert show];
+    
 
     
     
-    NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
-
-    [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 

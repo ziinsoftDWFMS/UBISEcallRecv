@@ -22,8 +22,7 @@ NSString* idForVendor;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+        // Do any additional setup after loading the view, typically from a nib.
     
     UIDevice *device = [UIDevice currentDevice];
     idForVendor = [device.identifierForVendor UUIDString];
@@ -36,7 +35,8 @@ NSString* idForVendor;
     
     //[param setValue:@"" forKey:@"hp"];
     [param setValue:@"RV01" forKey:@"code"];
-    [param setValue:@"S" forKey:@"gubun"];
+    [param setValue:@"R" forKey:@"gubun"];
+    
     [param setObject:idForVendor forKey:@"deviceId"];
     
     //deviceId
@@ -68,8 +68,16 @@ NSString* idForVendor;
         navigateYN = NO;
         
     }
+
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
+    
     
 }
+
 
 
 

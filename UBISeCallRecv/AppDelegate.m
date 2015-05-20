@@ -31,6 +31,12 @@
     
     if(launchOptions)
     {
+        //NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav" inDirectory:@"/"];
+        //CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
+        //AudioServicesCreateSystemSoundID(sndURL, &ssid);
+        
+        //AudioServicesPlaySystemSound(ssid);
+        
         application.applicationIconBadgeNumber = 0;
         
         NSDictionary *launchDictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey ];
@@ -39,23 +45,49 @@
         
         NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
         
-        [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+        //[application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+        //[application setApplicationIconBadgeNumber:0];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         
-        NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
+        //NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
         NSString *emcId            = [launchDictionary valueForKey:@"EMC_ID"];
         NSString *emcMsg           = [launchDictionary valueForKey:@"EMC_MSG"];
         NSString *code              = [launchDictionary valueForKey:@"CODE"];
-        NSLog(@"GRP_CD: %@",    grpCd);
+        
+        
+        
+        
+        //NSLog(@"GRP_CD: %@",    grpCd);
         NSLog(@"EMC_ID: %@",    emcId);
         NSLog(@"EMC_MSG: %@",   emcMsg);
-        NSLog(@"CODE: %@",      code);
+        //NSLog(@"CODE: %@",      code);
         
-        GRP_CD  = grpCd;
+        //GRP_CD  = grpCd;
         EMC_ID  = emcId;
         EMC_MSG = emcMsg;
         CODE    = code;
+        
+        
+        //메세지 왼쪽 정렬을 위한 코드 삽입
+        /*
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"\n\n\n\n\n\n" delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:@"전화걸기", nil];
+        
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 24.0, 250.0, 80.0)];
+        label.numberOfLines = 0;
+        label.textAlignment = NSTextAlignmentLeft;
+        label.backgroundColor = [UIColor clearColor];
+        //label.textColor = [UIColor whiteColor];
+        label.text = emcMsg;
+        [alert addSubview:label];
+         */
+        //----------------------------------------------------------------------------------
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                   message:emcMsg delegate:self
@@ -103,76 +135,61 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav" inDirectory:@"/"];
-    CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
-    AudioServicesCreateSystemSoundID(sndURL, &ssid);
     
-    AudioServicesPlaySystemSound(ssid);
+    if(application.applicationState == UIApplicationStateActive){
+        NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
+        CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
+        AudioServicesCreateSystemSoundID(sndURL, &ssid);
+        
+        AudioServicesPlaySystemSound(ssid);
+        
+    }
     
     
     application.applicationIconBadgeNumber = 0;
     //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-    NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
+    //NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
     NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
     NSString *emcMsg           = [userInfo valueForKey:@"EMC_MSG"];
     NSString *code              = [userInfo valueForKey:@"CODE"];
     //NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-    NSLog(@"GRP_CD: %@",    grpCd);
+    //NSLog(@"GRP_CD: %@",    grpCd);
     NSLog(@"EMC_ID: %@",    emcId);
     NSLog(@"EMC_MSG: %@",   emcMsg);
     NSLog(@"CODE: %@",      code);
     
-    GRP_CD  = grpCd;
+    //GRP_CD  = grpCd;
     EMC_ID  = emcId;
     EMC_MSG = emcMsg;
     CODE    = code;
     
-    
+    //메세지 왼쪽 정렬을 위한 코드 삽입
+    /*
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                          message:EMC_MSG delegate:self
+                                          message:@"\n\n\n\n\n\n" delegate:self
                                           cancelButtonTitle:@"확인"
                                           otherButtonTitles:@"전화걸기", nil];
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 24.0, 250.0, 80.0)];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentLeft;
+    label.backgroundColor = [UIColor clearColor];
+    //label.textColor = [UIColor whiteColor];
+    label.text = emcMsg;
+    [alert addSubview:label];
+     */
+    //----------------------------------------------------------------------------------
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:emcMsg delegate:self
+                                          cancelButtonTitle:@"확인"
+                                          otherButtonTitles:@"전화걸기", nil];
+    
     [alert show];
 
-    /*
-    if(application.applicationState == UIApplicationStateActive){
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:message delegate:self
-                                              cancelButtonTitle:@"확인"
-                                              otherButtonTitles:@"전화걸기", nil];
-        
-        [alert show];
-        
-    }else if(application.applicationState == UIApplicationStateInactive){
-        
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                              message:message delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"전화걸기", nil];
-        [alert show];
-        //전화걸기
-        
-    }else{
-        
-        NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:message delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"전화걸기", nil];
-        [alert show];
-
-        NSLog(@"message: %@", @"fail state");
-        
-    }*/
+    
+    
     NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
 
     [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
@@ -305,10 +322,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         
         
-        [param setObject:EMC_ID            forKey:@"emc_id"];
-        [param setObject:CODE        forKey:@"code"];
-        [param setValue:idForVendor             forKey:@"deviceId"];
-        [param setValue:@"C"            forKey:@"status"];
+        [param setObject:EMC_ID             forKey:@"emc_id"];
+        [param setObject:CODE            forKey:@"code"];
+        [param setValue:idForVendor         forKey:@"deviceId"];
+        [param setValue:@"C"                forKey:@"status"];
         
         //param.put("emc_id", emcid);
         //param.put("code", code);
@@ -403,10 +420,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         CAllServer* res = [CAllServer alloc];
         NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:EMC_ID         forKey:@"emc_id"];
-        [param setObject:CODE           forKey:@"code"];
-        [param setValue:@"S"            forKey:@"status"];
-        [param setValue:idForVendor     forKey:@"deviceId"];
+        [param setObject:EMC_ID             forKey:@"emc_id"];
+        [param setObject:CODE            forKey:@"code"];
+        [param setValue:@"S"                forKey:@"status"];
+        [param setValue:idForVendor         forKey:@"deviceId"];
         //param.put("emc_id", emcid);
         //param.put("code", code);
         //param.put("hp", mobileNo);
@@ -416,10 +433,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         NSLog(@" %@",str);
         
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
-        
+        exit(0);
     }
-    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     
 }

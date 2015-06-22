@@ -150,7 +150,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
     if(application.applicationState == UIApplicationStateActive){
-        NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
+        NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"wav" inDirectory:@"/"];
+        if([@"EM01"isEqualToString:[userInfo valueForKey:@"CODE"]])
+        {
+            sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
+        }
         CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
         AudioServicesCreateSystemSoundID(sndURL, &ssid);
         

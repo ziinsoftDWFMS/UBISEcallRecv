@@ -37,19 +37,19 @@
         
         //AudioServicesPlaySystemSound(ssid);
         
-        application.applicationIconBadgeNumber = 0;
+     //   application.applicationIconBadgeNumber = 0;
         
         NSDictionary *launchDictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey ];
         NSDictionary *apsDictionary = [launchDictionary valueForKey:@"aps"];
         //NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
         
-        NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
+       // NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
         
-        //[application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+       // [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
         //[application setApplicationIconBadgeNumber:0];
-//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+   ///     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+   //     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+       // [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         
         //NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
@@ -163,7 +163,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     }
     
     
-    application.applicationIconBadgeNumber = 0;
+    //application.applicationIconBadgeNumber = 0;
     //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
     //NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
     NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
@@ -223,120 +223,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     //                                      otherButtonTitles:@"전화걸기", nil];
     
     
-
-    
-    
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+   // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+   // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+   // [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    /*
-    if(application.applicationState == UIApplicationStateActive){
-        
-        // Foreground에서 알림 수신
-        NSDictionary *userinf = notification.userInfo;
-        // NSString *tel = [userinf dictionaryWithValuesForKeys:];
-        
-        
-        
-        NSString *tel = [userinf objectForKey:@"tel"];
-        
-        
-        NSDictionary *apsDictionary = [userinf valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        
-        
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:message delegate:self
-                                              cancelButtonTitle:@"확인"
-                                              otherButtonTitles:@"전화걸기", nil];
-        //NSLog(@"A4PNS Device Token: %@", notification.);
-        
-        [alert show];
-        
-     
-        NSLog(@"keys cont %@",tel);
-        NSString *string = [NSString stringWithFormat:@"tel://%@",tel];
-        // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
-        [[UIApplication sharedApplication] cancelLocalNotification:notification];
-        UIDevice *device = [UIDevice currentDevice];
-        NSString* idForVendor = [device.identifierForVendor UUIDString];
-        
-        CAllServer* res = [CAllServer alloc];
-        NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:@"EV01" forKey:@"code"];
-        [param setObject:idForVendor forKey:@"deviceId"];
-     
-        
-        //[param setValue:self.locationTxt.text forKey:@"location"];
-        
-        // NSString* str = [res stringWithUrl:@"emcInfoPush.do" VAL:param];
-        
-    }
-    
-    if(application.applicationState == UIApplicationStateInactive){
-        
-        // Background에서 알림 액션에 의한 수신
-        // notification.userInfo 이용하여 처리
-        NSLog(@"A3PNS Device Token: %@", @"test1");
-        
-        
-        NSDictionary *userinf = notification.userInfo;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"발신자에게 전화거는중...." delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"전화걸기", nil];
-        
-        [alert show];
-        
-
-        // NSString *tel = [userinf dictionaryWithValuesForKeys:];
-        // NSLog(@"key count %d", userinf.allKeys.count);
-        NSString *tel = [userinf objectForKey:@"tel"];
-        
-        NSDictionary *apsDictionary = [userinf valueForKey:@"aps"];
-        NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-        NSLog(@"message: %@", message);
-        
-        
-        NSString *string = [NSString stringWithFormat:@"tel://%@",@"01032198418"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
-        
-        
-        
-        
-        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-        //                                      message:notification.alertBody delegate:nil
-        //                                      cancelButtonTitle:@"OK"
-        //                                      otherButtonTitles:nil];
-        //        NSLog(@"A4PNS Device Token: %@", tel);
-        
-       
-        
-        [[UIApplication sharedApplication] cancelLocalNotification:notification];
-        UIDevice *device = [UIDevice currentDevice];
-        NSString* idForVendor = [device.identifierForVendor UUIDString];
-        
-        CAllServer* res = [CAllServer alloc];
-        NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
-        [param setObject:@"EV01" forKey:@"code"];
-        [param setObject:idForVendor forKey:@"deviceId"];
-        
-         //[param setValue:self.locationTxt.text forKey:@"location"];
-        
-        // NSString* str = [res stringWithUrl:@"emcInfoPush.do" VAL:param];
-    }
-    
-    [[UIApplication sharedApplication] cancelLocalNotification:notification];
-    
-    */
-    
+   
 }
 
 
@@ -346,7 +241,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     // OK 버튼을 눌렀을 때 버튼Index가 1로 들어감
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
-    
+
     if (buttonIndex == 1) {
         NSLog(@"Clicked YES");
         //NSString *string = [NSString stringWithFormat:@"tel://%@",@"01032198418"];
@@ -468,15 +363,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         NSLog(@" %@",str);
         
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+     //   [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+      //  [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        //[[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         exit(0);
     }
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+   // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+   // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     
 }

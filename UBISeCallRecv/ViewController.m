@@ -70,9 +70,9 @@ NSString* idForVendor;
     }
 
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+  //  [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+  //  [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+  //  [[UIApplication sharedApplication] cancelAllLocalNotifications];
 
     
     

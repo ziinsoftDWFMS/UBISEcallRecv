@@ -16,9 +16,17 @@
 		57911A8D1AF5E55800C66647 /* UBISeCallRecvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57911A8C1AF5E55800C66647 /* UBISeCallRecvTests.m */; };
 		57DFE5C71B2EF30D004CA5CA /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DFE5C61B2EF30D004CA5CA /* GlobalData.m */; };
 		69E572031B37FA7D00EBDCFC /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69E572021B37FA7D00EBDCFC /* 2.wav */; };
+		97B13BFA1C23A640001F544C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13BF91C23A640001F544C /* AudioToolbox.framework */; };
+		97B13BFC1C23A649001F544C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13BFB1C23A649001F544C /* CoreGraphics.framework */; };
+		97B13BFE1C23A654001F544C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13BFD1C23A654001F544C /* Foundation.framework */; };
+		97B13C001C23A65C001F544C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13BFF1C23A65C001F544C /* UIKit.framework */; };
+		97B13C021C23A667001F544C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C011C23A667001F544C /* SystemConfiguration.framework */; };
+		97B13C171C23A9CA001F544C /* GlobalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B13C101C23A9CA001F544C /* GlobalDataManager.m */; };
+		97B13C181C23A9CA001F544C /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B13C121C23A9CA001F544C /* CameraViewController.m */; };
+		97B13C191C23A9CA001F544C /* Commonutil.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B13C141C23A9CA001F544C /* Commonutil.m */; };
+		97B13C1A1C23A9CA001F544C /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B13C161C23A9CA001F544C /* ToastAlertView.m */; };
 		BA0578071B04439400724F64 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA0578061B04439400724F64 /* 1.wav */; };
 		BAB80F3D1B048034005D3F23 /* wi.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB80F3C1B048034005D3F23 /* wi.png */; };
-		BAC56B191B02E11500AB9ACA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC56B181B02E11500AB9ACA /* AudioToolbox.framework */; };
 		BAC56B1C1B02E1A400AB9ACA /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BAC56B1B1B02E1A400AB9ACA /* sound.wav */; };
 		BAFA2F3B1AFB38FB007BEFB3 /* authViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA2F3A1AFB38FB007BEFB3 /* authViewController.m */; };
 		BAFA2F3E1AFB3917007BEFB3 /* CAllServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA2F3D1AFB3917007BEFB3 /* CAllServer.m */; };
@@ -60,9 +68,21 @@
 		57DFE5C51B2EF30D004CA5CA /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		57DFE5C61B2EF30D004CA5CA /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		69E572021B37FA7D00EBDCFC /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		97B13BF91C23A640001F544C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		97B13BFB1C23A649001F544C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		97B13BFD1C23A654001F544C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		97B13BFF1C23A65C001F544C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		97B13C011C23A667001F544C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		97B13C0F1C23A9CA001F544C /* GlobalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDataManager.h; sourceTree = "<group>"; };
+		97B13C101C23A9CA001F544C /* GlobalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalDataManager.m; sourceTree = "<group>"; };
+		97B13C111C23A9CA001F544C /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		97B13C121C23A9CA001F544C /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		97B13C131C23A9CA001F544C /* Commonutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commonutil.h; sourceTree = "<group>"; };
+		97B13C141C23A9CA001F544C /* Commonutil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commonutil.m; sourceTree = "<group>"; };
+		97B13C151C23A9CA001F544C /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
+		97B13C161C23A9CA001F544C /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
 		BA0578061B04439400724F64 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		BAB80F3C1B048034005D3F23 /* wi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wi.png; sourceTree = "<group>"; };
-		BAC56B181B02E11500AB9ACA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BAC56B1B1B02E1A400AB9ACA /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		BAFA2F391AFB38E7007BEFB3 /* authViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authViewController.h; sourceTree = "<group>"; };
 		BAFA2F3A1AFB38FB007BEFB3 /* authViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authViewController.m; sourceTree = "<group>"; };
@@ -85,7 +105,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC56B191B02E11500AB9ACA /* AudioToolbox.framework in Frameworks */,
+				97B13C021C23A667001F544C /* SystemConfiguration.framework in Frameworks */,
+				97B13C001C23A65C001F544C /* UIKit.framework in Frameworks */,
+				97B13BFE1C23A654001F544C /* Foundation.framework in Frameworks */,
+				97B13BFC1C23A649001F544C /* CoreGraphics.framework in Frameworks */,
+				97B13BFA1C23A640001F544C /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +126,11 @@
 		57911A641AF5E55800C66647 = {
 			isa = PBXGroup;
 			children = (
-				BAC56B181B02E11500AB9ACA /* AudioToolbox.framework */,
+				97B13C011C23A667001F544C /* SystemConfiguration.framework */,
+				97B13BFF1C23A65C001F544C /* UIKit.framework */,
+				97B13BFD1C23A654001F544C /* Foundation.framework */,
+				97B13BFB1C23A649001F544C /* CoreGraphics.framework */,
+				97B13BF91C23A640001F544C /* AudioToolbox.framework */,
 				57911A6F1AF5E55800C66647 /* UBISeCallRecv */,
 				57911A891AF5E55800C66647 /* UBISeCallRecvTests */,
 				57911A6E1AF5E55800C66647 /* Products */,
@@ -139,6 +167,14 @@
 				57911A7F1AF5E55800C66647 /* LaunchScreen.xib */,
 				57DFE5C51B2EF30D004CA5CA /* GlobalData.h */,
 				57DFE5C61B2EF30D004CA5CA /* GlobalData.m */,
+				97B13C0F1C23A9CA001F544C /* GlobalDataManager.h */,
+				97B13C101C23A9CA001F544C /* GlobalDataManager.m */,
+				97B13C111C23A9CA001F544C /* CameraViewController.h */,
+				97B13C121C23A9CA001F544C /* CameraViewController.m */,
+				97B13C131C23A9CA001F544C /* Commonutil.h */,
+				97B13C141C23A9CA001F544C /* Commonutil.m */,
+				97B13C151C23A9CA001F544C /* ToastAlertView.h */,
+				97B13C161C23A9CA001F544C /* ToastAlertView.m */,
 				57911A701AF5E55800C66647 /* Supporting Files */,
 			);
 			path = UBISeCallRecv;
@@ -309,11 +345,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97B13C191C23A9CA001F544C /* Commonutil.m in Sources */,
 				57DFE5C71B2EF30D004CA5CA /* GlobalData.m in Sources */,
 				57911A791AF5E55800C66647 /* ViewController.m in Sources */,
 				BAFA2F401AFB397F007BEFB3 /* DwfmsSegue.m in Sources */,
 				57911A761AF5E55800C66647 /* AppDelegate.m in Sources */,
+				97B13C171C23A9CA001F544C /* GlobalDataManager.m in Sources */,
 				57911A731AF5E55800C66647 /* main.m in Sources */,
+				97B13C1A1C23A9CA001F544C /* ToastAlertView.m in Sources */,
+				97B13C181C23A9CA001F544C /* CameraViewController.m in Sources */,
 				BAFA2F3B1AFB38FB007BEFB3 /* authViewController.m in Sources */,
 				BAFA2F3E1AFB3917007BEFB3 /* CAllServer.m in Sources */,
 			);

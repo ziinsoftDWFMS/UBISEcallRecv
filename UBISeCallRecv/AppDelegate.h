@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-
+#import "ViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSString *DEVICE_TOK;
@@ -25,6 +25,8 @@
 @property (strong, nonatomic) NSString *EMC_ID;
 @property (strong, nonatomic) NSString *EMC_MSG;
 @property (strong, nonatomic) NSString *CODE;
+
+@property (weak, nonatomic) ViewController * main;
 
 @end
 

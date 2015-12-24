@@ -10,8 +10,13 @@
 
 
 @interface ViewController : UIViewController
-- (IBAction)closeButton:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+- (void) setimage:(NSString*) path num:(NSString*)num;
 @end
 
+@interface UIWebView(JavaScriptAlert)
+- (void)webView:(UIWebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(id)frame;
+- (BOOL)webView:(UIWebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(id)frame;
+@end

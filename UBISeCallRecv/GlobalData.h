@@ -10,6 +10,9 @@
 
  static NSString *homedir= @"E:/applcation";
  static NSString *ServerIp=@"http://211.253.9.3:8080";
+
+ static NSString *EmcId=@"";
+
 @interface GlobalData : NSObject{
     
     //    private String compCd;
@@ -40,6 +43,8 @@
 }
 +(NSString*) getServerIp;
 +(NSString*) getHomedir;
++(NSString*) getEmcId;
++(void) setEmcId:(NSString*) argEmcId;
 @property(strong,nonatomic) NSString *compCd;
 @property(strong,nonatomic) NSString *empNo;
 @property(strong,nonatomic) NSString *empNm;

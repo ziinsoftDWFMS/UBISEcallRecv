@@ -18,4 +18,12 @@
 +(NSString*) getHomedir{
     return homedir;
 }
+
++(NSString*) getEmcId{
+    return EmcId;
+}
+
++(void) setEmcId:(NSString*) argEmcId{
+    EmcId = argEmcId;
+}
 @end

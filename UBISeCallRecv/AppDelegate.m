@@ -7,6 +7,8 @@
 //
 #import "CAllServer.h"
 #import "AppDelegate.h"
+#import "GlobalData.h"
+#import "GlobalDataManager.h"
 
 @interface AppDelegate ()
 
@@ -174,6 +176,13 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     NSLog(@"EMC_ID: %@",    emcId);
     NSLog(@"EMC_MSG: %@",   emcMsg);
     NSLog(@"CODE: %@",      code);
+    
+    
+    
+    /****************************************************************/
+    [GlobalData setEmcId:emcId];
+    /****************************************************************/
+    
     
     //GRP_CD  = grpCd;
     EMC_ID  = emcId;

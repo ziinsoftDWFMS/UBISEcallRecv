@@ -375,8 +375,8 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
      //   [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
       //  [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
         //[[UIApplication sharedApplication] cancelAllLocalNotifications];
-        
-        exit(0);
+        [[self main] rcvAspn:str];
+        //exit(0);
     }
    // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
    // [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 - (void) setimage:(NSString*) path num:(NSString*)num;
+- (void) rcvAspn:(NSString*) jsonstring ;
 @end
 
 @interface UIWebView(JavaScriptAlert)

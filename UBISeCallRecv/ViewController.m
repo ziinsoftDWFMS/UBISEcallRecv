@@ -151,29 +151,7 @@ NSString* idForVendor;
         navigateYN = NO;
         [self performSegueWithIdentifier:@"authviewTrans" sender:self];
     } else {
-        /****************************************************************/
-        if (![@"" isEqualToString:[GlobalData getEmcId]]) {
-            NSString* callListDetail = @"";
-            
-            
-                NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
-                
-                callListDetail = [NSString stringWithFormat:@"%@/emcRecvList.do?COMP_CD=%@&EMPNO=%@&EMC_ID=%@", [GlobalData getServerIp], [sessiondata valueForKey:@"session_COMP_CD"], [sessiondata valueForKey:@"session_EMPNO"], [GlobalData getEmcId]];
-            
-            
-            NSString *urlParam=@"";
-            NSURL *url=[NSURL URLWithString:callListDetail];
-            NSMutableURLRequest *requestURL=[[NSMutableURLRequest alloc]initWithURL:url];
-            [requestURL setHTTPMethod:@"POST"];
-            [requestURL setHTTPBody:[urlParam dataUsingEncoding:NSUTF8StringEncoding]];
-            [self.webView loadRequest:requestURL];
-            
-            NSLog(@"??????? urlParam %@",callListDetail);
-            
-            
-            [GlobalData setEmcId:@""];
-        }
-        /****************************************************************/
+        
         NSLog(@">>4566>>>1234%@",idForVendor);
     }
 }
@@ -334,20 +312,38 @@ static NSInteger bIdx = -1;
 
 
 - (void) rcvAspn:(NSString*) jsonstring {
-    NSLog(@"nslog");
-    NSData *jsonData = [jsonstring dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-    
-    
-    NSString *server = [GlobalData getServerIp];
-    NSString *pageUrl = @"/searchas.do";
-    NSString *callUrl = @"";
-    callUrl = [NSString stringWithFormat:@"%@%@",server,pageUrl];
-    NSURL *url=[NSURL URLWithString:callUrl];
-    NSMutableURLRequest *requestURL=[[NSMutableURLRequest alloc]initWithURL:url];
-    
-    [self.webView loadRequest:requestURL];
+    /****************************************************************/
+    if (![@"" isEqualToString:[GlobalData getEmcId]]) {
+        NSString* callListDetail = @"";
+        
+        
+        NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
+        
+        callListDetail = [NSString stringWithFormat:@"%@/emcRecvList.do?COMP_CD=%@&EMPNO=%@&EMC_ID=%@", [GlobalData getServerIp], [sessiondata valueForKey:@"session_COMP_CD"], [sessiondata valueForKey:@"session_EMPNO"], [GlobalData getEmcId]];
+        
+        NSString* param = [callListDetail stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString* webUrl = [NSString stringWithFormat:@"%@", param];
+        
+        
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: webUrl]]];
+        
+        
+        
+        
+        //NSString *urlParam=@"";
+        //NSURL *url=[NSURL URLWithString:callListDetail];
+        //NSMutableURLRequest *requestURL=[[NSMutableURLRequest alloc]initWithURL:url];
+        //[requestURL setHTTPMethod:@"POST"];
+        //[requestURL setHTTPBody:[urlParam dataUsingEncoding:NSUTF8StringEncoding]];
+        //[self.webView loadRequest:requestURL];
+        
+        NSLog(@"??????? urlParam %@",callListDetail);
+        
+        
+        [GlobalData setEmcId:@""];
+    }
+    /****************************************************************/
     
 }
 

@@ -60,7 +60,9 @@
         NSString *code              = [launchDictionary valueForKey:@"CODE"];
         
         
-        
+        /****************************************************************/
+        [GlobalData setEmcId:emcId];
+        /****************************************************************/
         
         //NSLog(@"GRP_CD: %@",    grpCd);
         NSLog(@"EMC_ID: %@",    emcId);
@@ -93,7 +95,7 @@
         
         UITextView *txtView = nil ;
         //
-        txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 80.0)];
+        txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 120.0)];
         [txtView setBackgroundColor:[UIColor clearColor]];
         [txtView setTextAlignment:NSTextAlignmentLeft] ;
         [txtView setEditable:NO];
